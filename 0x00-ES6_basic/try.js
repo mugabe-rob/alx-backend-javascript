@@ -1,7 +1,15 @@
-{
-    const a = 10;
-    const b = 20;
-    console.log(a); // 10
-    console.log(b); // 20
-  }
- 
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+
+  res.setHeader("Content-Type", "text/plain");
+
+  res.end("Robertson\n");
+});
+
+const PORT = 3000;
+
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
+});
